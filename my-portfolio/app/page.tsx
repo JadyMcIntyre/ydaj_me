@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { Moon, Sun, Globe, Code, Search, PhoneCall, Palette, Laptop, Send, ArrowRight } from 'lucide-react'
+import { Moon, Sun, Globe, Code, Search, PhoneCall, Palette, Laptop, Send, ArrowRight, Mail, Phone, Linkedin, Github } from 'lucide-react'
 
 export default function Component() {
   const [darkMode, setDarkMode] = useState(true)
@@ -13,27 +13,27 @@ export default function Component() {
 
   const processSteps = [
     {
-      title: 'Intro Call',
-      shortDescription: 'Discuss what you envision',
-      longDescription: 'This is where we get to know each other! We\'ll explore your vision, define your goals, and ensure we\'re aligned on creating something impactful.',
+      title: "Intro Call",
+      shortDescription: "Discuss what you envision",
+      longDescription: "This is where we get to know each other! We'll explore your vision, define your goals, and ensure we're aligned on creating something impactful.",
       icon: PhoneCall
     },
     {
-      title: 'Web Design',
-      shortDescription: 'Crafting your vision',
-      longDescription: 'Here\'s where your ideas begin to take shape. I\'ll design a stunning and intuitive layout that reflects your brand and engages your audience.',
+      title: "Web Design",
+      shortDescription: "Crafting your vision",
+      longDescription: "Here's where your ideas begin to take shape. I'll design a stunning and intuitive layout that reflects your brand and engages your audience.",
       icon: Palette
     },
     {
-      title: 'Web Development',
-      shortDescription: 'Bringing design to life',
-      longDescription: 'I\'ll transform the design into a fully functional website, ensuring smooth performance, responsiveness, and seamless user experience.',
+      title: "Web Development",
+      shortDescription: "Bringing design to life",
+      longDescription: "I'll transform the design into a fully functional website, ensuring smooth performance, responsiveness, and seamless user experience.",
       icon: Laptop
     },
     {
-      title: 'Hand Over',
-      shortDescription: 'Empowering you to take charge',
-      longDescription: 'After rigorous testing, I\'ll deliver the final product and provide all the resources you need to maintain and manage your website with ease.',
+      title: "Hand Over",
+      shortDescription: "Empowering you to take charge",
+      longDescription: "After rigorous testing, I'll deliver the final product and provide all the resources you need to maintain and manage your website with ease.",
       icon: Send
     },
   ]
@@ -42,17 +42,17 @@ export default function Component() {
     {
       title: "Project Alpha",
       description: "A visual showcase of innovation and creativity, blending clean design with robust functionality.",
-      image: "/placeholder.png?height=400&width=600"
+      image: "/placeholder.svg?height=400&width=600"
     },
     {
       title: "Project Beta",
       description: "This project captures a seamless user experience and demonstrates cutting-edge development skills.",
-      image: "/placeholder.png?height=400&width=600"
+      image: "/placeholder.svg?height=400&width=600"
     },
     {
       title: "Project Gamma",
       description: "Designed for engagement, this project delivers both aesthetic appeal and technical performance.",
-      image: "/placeholder.png?height=400&width=600"
+      image: "/placeholder.svg?height=400&width=600"
     }
   ]
 
@@ -83,6 +83,7 @@ export default function Component() {
           </p>
         </section>
 
+        {/* Services Section */}
         <section className="py-20 px-10">
           <h3 className="text-4xl font-bold mb-12 text-center">Services</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -100,6 +101,7 @@ export default function Component() {
           </div>
         </section>
 
+        {/* Process Section */}
         <section id="process" className="py-20 px-10">
           <h3 className="text-4xl font-bold mb-12 text-center">Process</h3>
           <div className="relative">
@@ -123,6 +125,7 @@ export default function Component() {
           </div>
         </section>
 
+        {/* My Work Section */}
         <section id="work" className="py-20 px-10">
           <h3 className="text-4xl font-bold mb-12 text-center">My Work</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -141,6 +144,74 @@ export default function Component() {
               See More
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
+          </div>
+        </section>
+
+        {/* About Me Section - Moved Here */}
+        <section id="about" className="py-20 px-10">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div className="w-full md:w-1/2">
+              <img
+                src="/placeholder.svg?height=600&width=600"
+                alt="Professional headshot"
+                className="rounded-lg shadow-lg w-full h-auto object-cover"
+              />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h3 className="text-4xl font-bold mb-6">About Me</h3>
+              <p className="text-xl leading-relaxed text-gray-300">
+                Hi, I'm Your Name. With a passion for web development and design, I focus on delivering tailored, functional, and aesthetically striking websites. With experience in creating digital solutions that help businesses grow, I'm committed to providing value-driven results and building meaningful connections with my clients.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Me Section */}
+        <section id="contact" className="py-20 px-10">
+          <h3 className="text-4xl font-bold mb-12 text-center">Contact Me</h3>
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
+            <div className="w-full md:w-1/2">
+              <h4 className="text-2xl font-semibold mb-4">Get in Touch</h4>
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <Mail className="w-6 h-6 mr-2 text-blue-400" />
+                  <a href="mailto:your.email@example.com" className="hover:text-blue-400">your.email@example.com</a>
+                </div>
+                <div className="flex items-center">
+                  <Phone className="w-6 h-6 mr-2 text-blue-400" />
+                  <a href="tel:+1234567890" className="hover:text-blue-400">+1 (234) 567-890</a>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+                    <Linkedin className="w-6 h-6" />
+                    <span className="sr-only">LinkedIn</span>
+                  </a>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+                    <Github className="w-6 h-6" />
+                    <span className="sr-only">GitHub</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="w-full md:w-1/2">
+              <form className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block mb-2 text-sm font-medium">Name</label>
+                  <input type="text" id="name" className="w-full p-2 rounded-md bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-blue-400" required />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block mb-2 text-sm font-medium">Email</label>
+                  <input type="email" id="email" className="w-full p-2 rounded-md bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-blue-400" required />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block mb-2 text-sm font-medium">Message</label>
+                  <textarea id="message" rows={4} className="w-full p-2 rounded-md bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-blue-400" required></textarea>
+                </div>
+                <button type="submit" className="w-full px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50">
+                  Send Message
+                </button>
+              </form>
+            </div>
           </div>
         </section>
       </main>
