@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { Moon, Sun, Globe, Code, Search, PhoneCall, Palette, Laptop, Send, ArrowRight, Mail, Phone, Linkedin, Github } from 'lucide-react'
+import { Moon, Sun, Globe, Code, Search, PhoneCall, Palette, Laptop, Send, ArrowRight, Mail, Phone, Linkedin, Github, Twitter } from 'lucide-react'
 
 export default function Component() {
   const [darkMode, setDarkMode] = useState(true)
@@ -83,14 +83,31 @@ export default function Component() {
           </p>
         </section>
 
-        {/* Services Section */}
+        <section id="about" className="py-20 px-10">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div className="w-full md:w-1/2">
+              <img
+                src="/placeholder.svg?height=600&width=600"
+                alt="Professional headshot"
+                className="rounded-lg shadow-lg w-full h-auto object-cover"
+              />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h3 className="text-4xl font-bold mb-6">About Me</h3>
+              <p className="text-xl leading-relaxed text-gray-300">
+                Hi, I'm Your Name. With a passion for web development and design, I focus on delivering tailored, functional, and aesthetically striking websites. With experience in creating digital solutions that help businesses grow, I'm committed to providing value-driven results and building meaningful connections with my clients.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="py-20 px-10">
           <h3 className="text-4xl font-bold mb-12 text-center">Services</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: 'Web Design', icon: Globe, description: 'Creating beautiful, user-friendly websites that capture your brand\'s essence.' },
-              { title: 'Development', icon: Code, description: 'Building robust, scalable web applications with cutting-edge technologies.' },
-              { title: 'SEO', icon: Search, description: 'Optimizing your online presence to increase visibility and drive organic traffic.' }
+              { title: "Web Design", icon: Globe, description: "Creating beautiful, user-friendly websites that capture your brand's essence." },
+              { title: "Development", icon: Code, description: "Building robust, scalable web applications with cutting-edge technologies." },
+              { title: "SEO", icon: Search, description: "Optimizing your online presence to increase visibility and drive organic traffic." }
             ].map((service, index) => (
               <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-lg">
                 <service.icon className="w-12 h-12 mb-4 text-blue-400" />
@@ -101,7 +118,6 @@ export default function Component() {
           </div>
         </section>
 
-        {/* Process Section */}
         <section id="process" className="py-20 px-10">
           <h3 className="text-4xl font-bold mb-12 text-center">Process</h3>
           <div className="relative">
@@ -125,7 +141,6 @@ export default function Component() {
           </div>
         </section>
 
-        {/* My Work Section */}
         <section id="work" className="py-20 px-10">
           <h3 className="text-4xl font-bold mb-12 text-center">My Work</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -147,26 +162,6 @@ export default function Component() {
           </div>
         </section>
 
-        {/* About Me Section - Moved Here */}
-        <section id="about" className="py-20 px-10">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-            <div className="w-full md:w-1/2">
-              <img
-                src="/placeholder.svg?height=600&width=600"
-                alt="Professional headshot"
-                className="rounded-lg shadow-lg w-full h-auto object-cover"
-              />
-            </div>
-            <div className="w-full md:w-1/2">
-              <h3 className="text-4xl font-bold mb-6">About Me</h3>
-              <p className="text-xl leading-relaxed text-gray-300">
-                Hi, I'm Your Name. With a passion for web development and design, I focus on delivering tailored, functional, and aesthetically striking websites. With experience in creating digital solutions that help businesses grow, I'm committed to providing value-driven results and building meaningful connections with my clients.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Me Section */}
         <section id="contact" className="py-20 px-10">
           <h3 className="text-4xl font-bold mb-12 text-center">Contact Me</h3>
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
@@ -215,6 +210,35 @@ export default function Component() {
           </div>
         </section>
       </main>
+      <footer className="py-8 px-4 border-t border-gray-800">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-4 md:mb-0">
+            <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          </div>
+          <nav className="mb-4 md:mb-0">
+            <ul className="flex space-x-4">
+              <li><Link href="#" className="hover:text-blue-400">Home</Link></li>
+              <li><Link href="#about" className="hover:text-blue-400">About</Link></li>
+              <li><Link href="#work" className="hover:text-blue-400">Work</Link></li>
+              <li><Link href="#contact" className="hover:text-blue-400">Contact</Link></li>
+            </ul>
+          </nav>
+          <div className="flex space-x-4">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+              <Linkedin className="w-5 h-5" />
+              <span className="sr-only">LinkedIn</span>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+              <Github className="w-5 h-5" />
+              <span className="sr-only">GitHub</span>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+              <Twitter className="w-5 h-5" />
+              <span className="sr-only">Twitter</span>
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
