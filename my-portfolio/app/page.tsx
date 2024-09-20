@@ -59,7 +59,7 @@ export default function Component() {
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
       <header className="p-5 flex justify-between items-center">
-        <h1 className="text-xl font-semibold">Your Name</h1>
+        <h1 className="text-xl font-semibold">Jady McIntyre</h1>
         <nav>
           <ul className="flex space-x-4">
             <li><Link href="#about" className="hover:text-gray-300">About</Link></li>
@@ -95,7 +95,7 @@ export default function Component() {
             <div className="w-full md:w-1/2">
               <h3 className="text-4xl font-bold mb-6">About Me</h3>
               <p className="text-xl leading-relaxed text-gray-300">
-                Hi, I'm Your Name. With a passion for web development and design, I focus on delivering tailored, functional, and aesthetically striking websites. With experience in creating digital solutions that help businesses grow, I'm committed to providing value-driven results and building meaningful connections with my clients.
+                Hi, I'm Jady McIntyre. With a passion for web development and design, I focus on delivering tailored, functional, and aesthetically striking websites. With experience in creating digital solutions that help businesses grow, I'm committed to providing value-driven results and building meaningful connections with my clients.
               </p>
             </div>
           </div>
@@ -170,18 +170,18 @@ export default function Component() {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="w-6 h-6 mr-2 text-blue-400" />
-                  <a href="mailto:your.email@example.com" className="hover:text-blue-400">your.email@example.com</a>
+                  <a href="mailto:jadymcintyre@outlook.com" className="hover:text-blue-400">jadymcintyre@outlook.com</a>
                 </div>
                 <div className="flex items-center">
                   <Phone className="w-6 h-6 mr-2 text-blue-400" />
-                  <a href="tel:+1234567890" className="hover:text-blue-400">+1 (234) 567-890</a>
+                  <a href="tel:+27796934212" className="hover:text-blue-400">+27 79 693 4212</a>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+                  <a href="https://www.linkedin.com/in/jady-douglas-mcintyre-1657b0231/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
                     <Linkedin className="w-6 h-6" />
                     <span className="sr-only">LinkedIn</span>
                   </a>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+                  <a href="https://github.com/JadyMcIntyre" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
                     <Github className="w-6 h-6" />
                     <span className="sr-only">GitHub</span>
                   </a>
@@ -213,7 +213,7 @@ export default function Component() {
       <footer className="py-8 px-4 border-t border-gray-800">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Jady McIntyre. All rights reserved.</p>
           </div>
           <nav className="mb-4 md:mb-0">
             <ul className="flex space-x-4">
@@ -224,11 +224,11 @@ export default function Component() {
             </ul>
           </nav>
           <div className="flex space-x-4">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+            <a href="https://www.linkedin.com/in/jady-douglas-mcintyre-1657b0231/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
               <Linkedin className="w-5 h-5" />
               <span className="sr-only">LinkedIn</span>
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+            <a href="https://github.com/JadyMcIntyre" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
               <Github className="w-5 h-5" />
               <span className="sr-only">GitHub</span>
             </a>
