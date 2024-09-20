@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { Moon, Sun, Globe, Code, Search, PhoneCall, Palette, Laptop, Send } from 'lucide-react'
+import { Moon, Sun, Globe, Code, Search, PhoneCall, Palette, Laptop, Send, ArrowRight } from 'lucide-react'
 
 export default function Component() {
   const [darkMode, setDarkMode] = useState(true)
@@ -12,10 +12,48 @@ export default function Component() {
   }
 
   const processSteps = [
-    { title: 'Intro Call', description: 'Discuss what you envision', icon: PhoneCall },
-    { title: 'Web Design', description: 'Crafting your vision', icon: Palette },
-    { title: 'Web Development', description: 'Bringing design to life', icon: Laptop },
-    { title: 'Hand Over', description: 'Empowering you to take charge', icon: Send },
+    {
+      title: 'Intro Call',
+      shortDescription: 'Discuss what you envision',
+      longDescription: 'This is where we get to know each other! We\'ll explore your vision, define your goals, and ensure we\'re aligned on creating something impactful.',
+      icon: PhoneCall
+    },
+    {
+      title: 'Web Design',
+      shortDescription: 'Crafting your vision',
+      longDescription: 'Here\'s where your ideas begin to take shape. I\'ll design a stunning and intuitive layout that reflects your brand and engages your audience.',
+      icon: Palette
+    },
+    {
+      title: 'Web Development',
+      shortDescription: 'Bringing design to life',
+      longDescription: 'I\'ll transform the design into a fully functional website, ensuring smooth performance, responsiveness, and seamless user experience.',
+      icon: Laptop
+    },
+    {
+      title: 'Hand Over',
+      shortDescription: 'Empowering you to take charge',
+      longDescription: 'After rigorous testing, I\'ll deliver the final product and provide all the resources you need to maintain and manage your website with ease.',
+      icon: Send
+    },
+  ]
+
+  const projects = [
+    {
+      title: "Project Alpha",
+      description: "A visual showcase of innovation and creativity, blending clean design with robust functionality.",
+      image: "/placeholder.png?height=400&width=600"
+    },
+    {
+      title: "Project Beta",
+      description: "This project captures a seamless user experience and demonstrates cutting-edge development skills.",
+      image: "/placeholder.png?height=400&width=600"
+    },
+    {
+      title: "Project Gamma",
+      description: "Designed for engagement, this project delivers both aesthetic appeal and technical performance.",
+      image: "/placeholder.png?height=400&width=600"
+    }
   ]
 
   return (
@@ -67,20 +105,42 @@ export default function Component() {
           <div className="relative">
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gray-700"></div>
             {processSteps.map((step, index) => (
-              <div key={index} className={`flex items-center mb-12 ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}>
+              <div key={index} className={`flex items-center mb-20 ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}>
                 <div className={`w-1/2 ${index % 2 === 0 ? 'text-right pr-8' : 'pl-8'}`}>
-                  <div className="bg-gray-800 p-6 rounded-lg shadow-lg inline-block">
+                  <div className="bg-gray-800 p-6 rounded-lg shadow-lg inline-block max-w-md">
                     <step.icon className="w-12 h-12 mb-4 text-blue-400 mx-auto" />
-                    <h4 className="text-xl font-semibold mb-2">{step.title}</h4>
-                    <p className="text-gray-400">{step.description}</p>
+                    <h4 className="text-2xl font-semibold mb-2">{step.title}</h4>
+                    <p className="text-lg text-blue-400 mb-4">{step.shortDescription}</p>
+                    <p className="text-gray-400">{step.longDescription}</p>
                   </div>
                 </div>
-                <div className="w-8 h-8 bg-blue-400 rounded-full absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
-                  <span className="text-black font-bold">{index + 1}</span>
+                <div className="w-12 h-12 bg-blue-400 rounded-full absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
+                  <span className="text-black font-bold text-xl">{index + 1}</span>
                 </div>
                 <div className="w-1/2"></div>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section id="work" className="py-20 px-10">
+          <h3 className="text-4xl font-bold mb-12 text-center">My Work</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <div key={index} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+                <div className="p-6">
+                  <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
+                  <p className="text-gray-400">{project.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link href="/work" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200">
+              See More
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
           </div>
         </section>
       </main>
