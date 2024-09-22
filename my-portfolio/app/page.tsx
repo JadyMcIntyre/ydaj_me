@@ -75,7 +75,7 @@ export default function Component() {
       </header>
       <main>
         <section className="flex flex-col justify-center items-start h-screen p-10">
-          <h2 className="text-7xl font-bold leading-tight mb-4">
+          <h2 className="text-9xl font-bold leading-tight mb-4">
             Digital<br />Designer
           </h2>
           <p className="text-xl text-gray-400 max-w-md">
