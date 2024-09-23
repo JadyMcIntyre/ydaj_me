@@ -112,7 +112,7 @@ export default function Component() {
               <div key={index} className={`flex items-center mb-20 ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}>
                 <div className={`w-1/2 ${index % 2 === 0 ? 'text-right pr-8' : 'pl-8'}`}>
                   <div className="bg-gray-800 p-6 rounded-lg shadow-lg inline-block max-w-md">
-                    <step.icon className="w-12 h-12 mb-4 text-blue-400 mx-auto" />
+                    <step.icon className={`w-12 h-12 mb-4 text-blue-400 ${index % 2 === 0 ? 'ml-auto' : 'mr-auto'}`} />
                     <h4 className="text-2xl font-semibold mb-2">{step.title}</h4>
                     <p className="text-lg text-blue-400 mb-4">{step.shortDescription}</p>
                     <p className="text-gray-400">{step.longDescription}</p>
