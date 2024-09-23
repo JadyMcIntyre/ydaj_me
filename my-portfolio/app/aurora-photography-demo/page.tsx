@@ -38,7 +38,7 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-center">
         <Image
-          src="/placeholder.svg?height=1080&width=1920"
+          src="/images/aurora/aurora-hero.jpg?height=1080&width=1920"
           alt="Aurora Photography Hero Image"
           layout="fill"
           objectFit="cover"
@@ -65,7 +65,7 @@ export default function LandingPage() {
             {[1, 2, 3].map((item) => (
               <div key={item} className="group relative overflow-hidden rounded-lg aspect-square">
                 <Image
-                  src={`/placeholder.svg?height=600&width=600&text=Portfolio+${item}`}
+                  src={`/images/aurora/portfolio-${item}.jpg?height=600&width=600&text=Portfolio+${item}`}
                   alt={`Portfolio ${item}`}
                   layout="fill"
                   objectFit="cover"
@@ -95,7 +95,7 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <Image
-                src="/placeholder.svg?height=800&width=1200&text=Case+Study+Image"
+                src="/images/aurora/case-study.jpg?height=800&width=1200&text=Case+Study+Image"
                 alt="Case Study: City Lights"
                 width={1200}
                 height={800}
@@ -132,7 +132,7 @@ export default function LandingPage() {
               <div key={index} className="bg-white rounded-lg shadow-lg p-6">
                 <div className="flex items-center mb-4">
                   <Image
-                    src={`/placeholder.svg?height=64&width=64&text=${testimonial.name.charAt(0)}`}
+                    src={`/images/aurora/testimonial-${index + 1}.png?height=64&width=64&text=${testimonial.name.charAt(0)}`}
                     alt={testimonial.name}
                     width={64}
                     height={64}
