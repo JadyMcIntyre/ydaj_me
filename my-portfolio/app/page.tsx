@@ -43,15 +43,15 @@ export default function Component() {
     {
       title: "Learn Craft",
       description: "LearnCraft Academy, an online learning platform providing a variety of courses. The site features a clean, responsive design with an engaging user experience, guiding users from course exploration to enrollment seamlessly.",
-      image: "/images/learn_craft.png"
+      image: "/images/learn-craft.png"
     },
     {
       title: "Aurora Photography",
-      description: "This project captures a seamless user experience and demonstrates cutting-edge development skills.",
-      image: "/images/placeholder.png"
+      description: "This project showcases a sleek, modern landing page for Aurora Photography, a professional photography business. The site highlights their portfolio, case studies, testimonials, and an integrated booking form, providing visitors with a seamless browsing experience.",
+      image: "/images/aurora-photography.png"
     },
     {
-      title: "Project Gamma",
+      title: "Pinnacle Strategy",
       description: "Designed for engagement, this project delivers both aesthetic appeal and technical performance.",
       image: "/images/placeholder.png"
     }
@@ -150,7 +150,7 @@ export default function Component() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div key={index} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                <Link href={project.title === "Learn Craft" ? "/learn-craft" : project.title === "Aurora Photography" ? "/aurora-photography" : "#"}>
+                <Link href={project.title === "Learn Craft" ? "/learn-craft" : project.title === "Aurora Photography" ? "/aurora-photography" : project.title === "Pinnacle Strategy" ? "/pinnacle-strategy" : "#"}>
                   <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-48 object-cover" />
                 </Link>
                 <div className="p-6">
