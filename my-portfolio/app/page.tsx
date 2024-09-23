@@ -41,9 +41,9 @@ export default function Component() {
 
   const projects = [
     {
-      title: "Project Alpha",
-      description: "A visual showcase of innovation and creativity, blending clean design with robust functionality.",
-      image: "/images/placeholder.png"
+      title: "Learn Craft",
+      description: "LearnCraft Academy, an online learning platform providing a variety of courses. The site features a clean, responsive design with an engaging user experience, guiding users from course exploration to enrollment seamlessly.",
+      image: "/images/learn_craft.png"
     },
     {
       title: "Project Beta",
