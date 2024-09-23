@@ -74,6 +74,7 @@ export default function Component() {
         </button>
       </header>
       <main>
+        {/* Hero Section */}
         <section className="flex flex-col justify-center items-start h-screen p-10">
           <h2 className="text-9xl font-bold leading-tight mb-4">
             Digital<br />Designer
@@ -83,24 +84,7 @@ export default function Component() {
           </p>
         </section>
 
-        <section id="about" className="py-20 px-10">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-            <div className="w-full md:w-1/2">
-              <img
-                src="/placeholder.svg?height=600&width=600"
-                alt="Professional headshot"
-                className="rounded-lg shadow-lg w-full h-auto object-cover"
-              />
-            </div>
-            <div className="w-full md:w-1/2">
-              <h3 className="text-4xl font-bold mb-6">About Me</h3>
-              <p className="text-xl leading-relaxed text-gray-300">
-                Hi, I'm Jady McIntyre. With a passion for web development and design, I focus on delivering tailored, functional, and aesthetically striking websites. With experience in creating digital solutions that help businesses grow, I'm committed to providing value-driven results and building meaningful connections with my clients.
-              </p>
-            </div>
-          </div>
-        </section>
-
+        {/* Services Section */}
         <section className="py-20 px-10">
           <h3 className="text-4xl font-bold mb-12 text-center">Services</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -118,6 +102,7 @@ export default function Component() {
           </div>
         </section>
 
+        {/* Process Section */}
         <section id="process" className="py-20 px-10">
           <h3 className="text-4xl font-bold mb-12 text-center">Process</h3>
           <div className="relative">
@@ -141,6 +126,7 @@ export default function Component() {
           </div>
         </section>
 
+        {/* Work Section */}
         <section id="work" className="py-20 px-10">
           <h3 className="text-4xl font-bold mb-12 text-center">My Work</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -162,6 +148,26 @@ export default function Component() {
           </div>
         </section>
 
+        {/* Moved About Section */}
+        <section id="about" className="py-20 px-10">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div className="w-full md:w-1/2">
+              <img
+                src="/placeholder.svg?height=600&width=600"
+                alt="Professional headshot"
+                className="rounded-lg shadow-lg w-full h-auto object-cover"
+              />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h3 className="text-4xl font-bold mb-6">About Me</h3>
+              <p className="text-xl leading-relaxed text-gray-300">
+                Hi, I'm Jady McIntyre. With a passion for web development and design, I focus on delivering tailored, functional, and aesthetically striking websites. With experience in creating digital solutions that help businesses grow, I'm committed to providing value-driven results and building meaningful connections with my clients.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
         <section id="contact" className="py-20 px-10">
           <h3 className="text-4xl font-bold mb-12 text-center">Contact Me</h3>
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
