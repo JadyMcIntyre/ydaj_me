@@ -46,7 +46,7 @@ export default function Component() {
       image: "/images/learn_craft.png"
     },
     {
-      title: "Project Beta",
+      title: "Aurora Photography",
       description: "This project captures a seamless user experience and demonstrates cutting-edge development skills.",
       image: "/images/placeholder.png"
     },
@@ -104,47 +104,44 @@ export default function Component() {
         </section>
 
         {/* Process Section */}
-<section id="process" className="py-20 px-10">
-  <h3 className="text-4xl font-bold mb-12 text-center">Process</h3>
-  <div className="relative">
-    <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-20 w-px bg-gray-700"></div>
-    {processSteps.map((step, index) => (
-      <div
-        key={index}
-        className={`flex items-center ${
-          index !== processSteps.length - 1 ? 'mb-20' : ''
-        } ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}
-      >
-        <div
-          className={`w-1/2 ${
-            index % 2 === 0 ? 'text-right pr-8' : 'pl-8'
-          }`}
-        >
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg inline-block max-w-md">
-            <step.icon
-              className={`w-12 h-12 mb-4 text-blue-400 ${
-                index % 2 === 0 ? 'ml-auto' : 'mr-auto'
-              }`}
-            />
-            <h4 className="text-2xl font-semibold mb-2">
-              {step.title}
-            </h4>
-            <p className="text-lg text-blue-400 mb-4">
-              {step.shortDescription}
-            </p>
-            <p className="text-gray-400">{step.longDescription}</p>
+        <section id="process" className="py-20 px-10">
+          <h3 className="text-4xl font-bold mb-12 text-center">Process</h3>
+          <div className="relative">
+            <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-20 w-px bg-gray-700"></div>
+            {processSteps.map((step, index) => (
+              <div
+                key={index}
+                className={`flex items-center ${index !== processSteps.length - 1 ? 'mb-20' : ''
+                  } ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}
+              >
+                <div
+                  className={`w-1/2 ${index % 2 === 0 ? 'text-right pr-8' : 'pl-8'
+                    }`}
+                >
+                  <div className="bg-gray-800 p-6 rounded-lg shadow-lg inline-block max-w-md">
+                    <step.icon
+                      className={`w-12 h-12 mb-4 text-blue-400 ${index % 2 === 0 ? 'ml-auto' : 'mr-auto'
+                        }`}
+                    />
+                    <h4 className="text-2xl font-semibold mb-2">
+                      {step.title}
+                    </h4>
+                    <p className="text-lg text-blue-400 mb-4">
+                      {step.shortDescription}
+                    </p>
+                    <p className="text-gray-400">{step.longDescription}</p>
+                  </div>
+                </div>
+                <div className="w-12 h-12 bg-blue-400 rounded-full absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
+                  <span className="text-black font-bold text-xl">
+                    {index + 1}
+                  </span>
+                </div>
+                <div className="w-1/2"></div>
+              </div>
+            ))}
           </div>
-        </div>
-        <div className="w-12 h-12 bg-blue-400 rounded-full absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
-          <span className="text-black font-bold text-xl">
-            {index + 1}
-          </span>
-        </div>
-        <div className="w-1/2"></div>
-      </div>
-    ))}
-  </div>
-</section>
+        </section>
 
 
         {/* Work Section */}
@@ -153,7 +150,7 @@ export default function Component() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div key={index} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                <Link href={project.title === "Learn Craft" ? "/learn-craft" : "#"}>
+                <Link href={project.title === "Learn Craft" ? "/learn-craft" : project.title === "Aurora Photography" ? "/aurora-photography" : "#"}>
                   <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-48 object-cover" />
                 </Link>
                 <div className="p-6">

@@ -112,7 +112,7 @@ export default function LearnCraftAcademy() {
         </div>
         <Sheet>
           <SheetTrigger asChild>
-            <Button className="lg:hidden" size="icon" variant="outline">
+            <Button className="lg:hidden ml-4" size="icon" variant="outline">
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
@@ -120,20 +120,20 @@ export default function LearnCraftAcademy() {
           <SheetContent side="right">
             <nav className="grid gap-6">
               <Link className="flex items-center space-x-2" href="#">
-                <GraduationCap className="h-6 w-6 text-purple-600" />
-                <span className="font-bold text-purple-600">LearnCraft Academy</span>
+                <GraduationCap className="h-6 w-6" />
+                <span className="font-bold">LearnCraft Academy</span>
               </Link>
               <div className="grid gap-4">
                 <h4 className="font-medium text-sm">Menu</h4>
                 <nav className="grid gap-2">
-                  <Link className="flex items-center py-2 text-gray-700 dark:text-gray-200" href="#">
+                  <Link className="flex items-center py-2" href="#">
                     Courses
                     <ChevronRight className="ml-auto h-4 w-4" />
                   </Link>
-                  <Link className="flex items-center py-2 text-gray-700 dark:text-gray-200" href="#">
+                  <Link className="flex items-center py-2" href="#">
                     Blog
                   </Link>
-                  <Link className="flex items-center py-2 text-gray-700 dark:text-gray-200" href="#">
+                  <Link className="flex items-center py-2" href="#">
                     Quizzes
                   </Link>
                 </nav>
@@ -141,10 +141,10 @@ export default function LearnCraftAcademy() {
               <div className="grid gap-4">
                 <h4 className="font-medium text-sm">Account</h4>
                 <nav className="grid gap-2">
-                  <Link className="flex items-center py-2 text-gray-700 dark:text-gray-200" href="#">
+                  <Link className="flex items-center py-2" href="#">
                     Log in
                   </Link>
-                  <Link className="flex items-center py-2 text-gray-700 dark:text-gray-200" href="#">
+                  <Link className="flex items-center py-2" href="#">
                     Sign up
                   </Link>
                 </nav>
@@ -155,7 +155,7 @@ export default function LearnCraftAcademy() {
       </header>
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-purple-600 text-white">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
@@ -165,7 +165,7 @@ export default function LearnCraftAcademy() {
                   Unlock your potential with our expert-led courses. Start your learning journey today.
                 </p>
               </div>
-              <div className="space-x-4">
+              <div className="flex flex-wrap justify-center gap-4">
                 <Button className="bg-white text-purple-600 hover:bg-purple-100">Get Started</Button>
                 <Button variant="outline" className="text-white border-white hover:bg-purple-700">Explore Courses</Button>
               </div>
@@ -173,41 +173,41 @@ export default function LearnCraftAcademy() {
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-800">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center text-purple-600 dark:text-purple-400">
               Featured Courses
             </h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <Card className="bg-purple-50 dark:bg-gray-700 border-purple-200 dark:border-purple-800">
+              <Card className="flex flex-col h-full bg-purple-50 dark:bg-gray-700 border-purple-200 dark:border-purple-800">
                 <CardHeader>
                   <CardTitle className="text-purple-600 dark:text-purple-400">Web Development Fundamentals</CardTitle>
                   <CardDescription>Learn the basics of HTML, CSS, and JavaScript</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <p>Master the core technologies that power the web and start building your own websites.</p>
                 </CardContent>
                 <CardFooter>
                   <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white">Enroll Now</Button>
                 </CardFooter>
               </Card>
-              <Card className="bg-purple-50 dark:bg-gray-700 border-purple-200 dark:border-purple-800">
+              <Card className="flex flex-col h-full bg-purple-50 dark:bg-gray-700 border-purple-200 dark:border-purple-800">
                 <CardHeader>
                   <CardTitle className="text-purple-600 dark:text-purple-400">Data Science Essentials</CardTitle>
                   <CardDescription>Dive into the world of data analysis and machine learning</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <p>Learn to extract insights from data and build predictive models using Python.</p>
                 </CardContent>
                 <CardFooter>
                   <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white">Enroll Now</Button>
                 </CardFooter>
               </Card>
-              <Card className="bg-purple-50 dark:bg-gray-700 border-purple-200 dark:border-purple-800">
+              <Card className="flex flex-col h-full bg-purple-50 dark:bg-gray-700 border-purple-200 dark:border-purple-800">
                 <CardHeader>
                   <CardTitle className="text-purple-600 dark:text-purple-400">Digital Marketing Mastery</CardTitle>
                   <CardDescription>Create effective online marketing strategies</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <p>Discover the latest techniques in SEO, social media marketing, and content creation.</p>
                 </CardContent>
                 <CardFooter>
@@ -218,7 +218,7 @@ export default function LearnCraftAcademy() {
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-purple-100 dark:bg-gray-900">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center text-purple-600 dark:text-purple-400">
               Latest from Our Blog
             </h2>
@@ -281,47 +281,47 @@ export default function LearnCraftAcademy() {
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-800">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8 text-center text-purple-600 dark:text-purple-400">
               Test Your Knowledge
             </h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <Card className="bg-gradient-to-br from-purple-500 to-indigo-600 text-white">
+              <Card className="flex flex-col h-full bg-gradient-to-br from-purple-500 to-indigo-600 text-white">
                 <CardHeader>
                   <CardTitle>Web Development Quiz</CardTitle>
                   <CardDescription className="text-purple-100">
                     10 questions to test your HTML, CSS, and JavaScript knowledge
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <p className="text-purple-100">Challenge yourself and see how much you've learned about web development.</p>
                 </CardContent>
                 <CardFooter>
                   <Button className="w-full bg-white text-purple-600 hover:bg-purple-100">Start Quiz</Button>
                 </CardFooter>
               </Card>
-              <Card className="bg-gradient-to-br from-blue-500 to-cyan-600 text-white">
+              <Card className="flex flex-col h-full bg-gradient-to-br from-blue-500 to-cyan-600 text-white">
                 <CardHeader>
                   <CardTitle>Data Science Challenge</CardTitle>
                   <CardDescription className="text-blue-100">
                     Solve real-world data problems in this interactive quiz
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <p className="text-blue-100">Put your data analysis and machine learning skills to the test.</p>
                 </CardContent>
                 <CardFooter>
                   <Button className="w-full bg-white text-blue-600 hover:bg-blue-100">Start Quiz</Button>
                 </CardFooter>
               </Card>
-              <Card className="bg-gradient-to-br from-green-500 to-teal-600 text-white">
+              <Card className="flex flex-col h-full bg-gradient-to-br from-green-500 to-teal-600 text-white">
                 <CardHeader>
                   <CardTitle>Digital Marketing Trivia</CardTitle>
                   <CardDescription className="text-green-100">
                     Test your knowledge of digital marketing concepts and strategies
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <p className="text-green-100">See how well you understand the latest trends in online marketing.</p>
                 </CardContent>
                 <CardFooter>
@@ -332,16 +332,20 @@ export default function LearnCraftAcademy() {
           </div>
         </section>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-purple-600 text-white">
-        <p className="text-xs text-purple-200">© 2024 LearnCraft Academy. All rights reserved.</p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4 text-purple-200" href="#">
-            Terms of Service
-          </Link>
-          <Link className="text-xs hover:underline underline-offset-4 text-purple-200" href="#">
-            Privacy
-          </Link>
-        </nav>
+      <footer className="w-full py-6 bg-purple-600 text-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-sm text-purple-200">© 2024 LearnCraft Academy. All rights reserved.</p>
+            <nav className="flex gap-4 sm:gap-6 mt-4 md:mt-0">
+              <Link className="text-sm hover:underline underline-offset-4 text-purple-200" href="#">
+                Terms of Service
+              </Link>
+              <Link className="text-sm hover:underline underline-offset-4 text-purple-200" href="#">
+                Privacy Policy
+              </Link>
+            </nav>
+          </div>
+        </div>
       </footer>
     </div>
   )
