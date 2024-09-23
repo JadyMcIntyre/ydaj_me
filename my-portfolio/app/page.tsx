@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import Image from 'next/image'
 import { Moon, Sun, Globe, Code, Search, PhoneCall, Palette, Laptop, Send, ArrowRight, Mail, Phone, Linkedin, Github, Twitter } from 'lucide-react'
 
 export default function Component() {
@@ -89,7 +90,7 @@ export default function Component() {
           <h3 className="text-4xl font-bold mb-12 text-center">Services</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Web Design", icon: Globe, description: "Creating beautiful, user-friendly websites that capture your brand's essence." },
+              { title: "Web Design", icon: Globe, description: "Creating beautiful, user-friendly websites that capture your brand&apos;s essence." },
               { title: "Development", icon: Code, description: "Building robust, scalable web applications with cutting-edge technologies." },
               { title: "SEO", icon: Search, description: "Optimizing your online presence to increase visibility and drive organic traffic." }
             ].map((service, index) => (
@@ -132,7 +133,7 @@ export default function Component() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div key={index} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+                <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-48 object-cover" />
                 <div className="p-6">
                   <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
                   <p className="text-gray-400">{project.description}</p>
@@ -152,16 +153,18 @@ export default function Component() {
         <section id="about" className="py-20 px-10">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div className="w-full md:w-1/2">
-              <img
+              <Image
                 src="/placeholder.svg?height=600&width=600"
                 alt="Professional headshot"
+                width={600}
+                height={600}
                 className="rounded-lg shadow-lg w-full h-auto object-cover"
               />
             </div>
             <div className="w-full md:w-1/2">
               <h3 className="text-4xl font-bold mb-6">About Me</h3>
               <p className="text-xl leading-relaxed text-gray-300">
-                Hi, I'm Jady McIntyre. With a passion for web development and design, I focus on delivering tailored, functional, and aesthetically striking websites. With experience in creating digital solutions that help businesses grow, I'm committed to providing value-driven results and building meaningful connections with my clients.
+                Hi, I&apos;m Jady McIntyre. With a passion for web development and design, I focus on delivering tailored, functional, and aesthetically striking websites. With experience in creating digital solutions that help businesses grow, I&apos;m committed to providing value-driven results and building meaningful connections with my clients.
               </p>
             </div>
           </div>
