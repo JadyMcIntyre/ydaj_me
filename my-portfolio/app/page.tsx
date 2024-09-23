@@ -43,17 +43,17 @@ export default function Component() {
     {
       title: "Project Alpha",
       description: "A visual showcase of innovation and creativity, blending clean design with robust functionality.",
-      image: "/placeholder.svg?height=400&width=600"
+      image: "/images/placeholder.png"
     },
     {
       title: "Project Beta",
       description: "This project captures a seamless user experience and demonstrates cutting-edge development skills.",
-      image: "/placeholder.svg?height=400&width=600"
+      image: "/images/placeholder.png"
     },
     {
       title: "Project Gamma",
       description: "Designed for engagement, this project delivers both aesthetic appeal and technical performance.",
-      image: "/placeholder.svg?height=400&width=600"
+      image: "/images/placeholder.png"
     }
   ]
 
@@ -66,7 +66,7 @@ export default function Component() {
             <li><Link href="#about" className="hover:text-gray-300">About</Link></li>
             <li><Link href="#work" className="hover:text-gray-300">Work</Link></li>
             <li><Link href="#process" className="hover:text-gray-300">Process</Link></li>
-            <li><Link href="#contact" className="hover:text-gray-300">Drop me a line</Link></li>
+            <li><Link href="#contact" className="hover:text-gray-300">Contact me</Link></li>
           </ul>
         </nav>
         <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-gray-700">
@@ -154,7 +154,7 @@ export default function Component() {
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div className="w-full md:w-1/2">
               <Image
-                src="/placeholder.svg?height=600&width=600"
+                src="/images/headshot.jpeg"
                 alt="Professional headshot"
                 width={600}
                 height={600}
