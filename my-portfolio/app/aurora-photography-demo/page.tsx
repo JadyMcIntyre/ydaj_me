@@ -12,7 +12,7 @@ export default function LandingPage() {
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-50 backdrop-blur-md">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold">
+          <Link href="#hero" className="text-2xl font-bold">
             Aurora Photography
           </Link>
           <div className="hidden md:flex space-x-6">
@@ -36,7 +36,7 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center text-center">
+      <section id="hero" className="relative h-screen flex items-center justify-center text-center">
         <Image
           src="/images/aurora/aurora-hero.jpg?height=1080&width=1920"
           alt="Aurora Photography Hero Image"
