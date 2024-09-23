@@ -153,7 +153,9 @@ export default function Component() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div key={index} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-48 object-cover" />
+                <Link href={project.title === "Learn Craft" ? "/learn-craft" : "#"}>
+                  <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-48 object-cover" />
+                </Link>
                 <div className="p-6">
                   <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
                   <p className="text-gray-400">{project.description}</p>
