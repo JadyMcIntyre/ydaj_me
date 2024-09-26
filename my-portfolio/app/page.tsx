@@ -109,11 +109,11 @@ export default function Component() {
       )}
       <main>
         {/* Hero Section */}
-        <section className="flex flex-col justify-center items-center h-screen p-10 text-center">
-          <h2 className="text-6xl md:text-9xl font-bold leading-tight mb-4">
+        <section className="flex flex-col justify-center items-start md:items-start h-screen p-10 md:p-20">
+          <h2 className="text-6xl md:text-9xl font-bold leading-tight mb-4 text-center md:text-left w-full">
             Digital<br />Designer
           </h2>
-          <p className="text-xl text-gray-400 max-w-md">
+          <p className="text-xl text-gray-400 max-w-md text-center md:text-left w-full">
             specialized in Web Design, UX / UI, Webflow, and Front End Development.
           </p>
         </section>
