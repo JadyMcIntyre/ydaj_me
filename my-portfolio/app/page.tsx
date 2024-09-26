@@ -1,15 +1,30 @@
 "use client"
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Moon, Sun, Globe, Code, Search, PhoneCall, Palette, Laptop, Send, ArrowRight, Mail, Phone, Linkedin, Github, Twitter } from 'lucide-react'
+import { Moon, Sun, Globe, Code, Search, PhoneCall, Palette, Laptop, Send, ArrowRight, Mail, Phone, Linkedin, Github, Twitter, Menu, X } from 'lucide-react'
 
 export default function Component() {
   const [darkMode, setDarkMode] = useState(true)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkIsMobile()
+    window.addEventListener('resize', checkIsMobile)
+    return () => window.removeEventListener('resize', checkIsMobile)
+  }, [])
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode)
+  }
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
   }
 
   const processSteps = [
@@ -61,23 +76,41 @@ export default function Component() {
     <div className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
       <header className="p-5 flex justify-between items-center">
         <h1 className="text-xl font-semibold">Jady McIntyre</h1>
-        <nav>
-          <ul className="flex space-x-4">
-            <li><Link href="#about" className="hover:text-gray-300">About</Link></li>
-            <li><Link href="#work" className="hover:text-gray-300">Work</Link></li>
-            <li><Link href="#process" className="hover:text-gray-300">Process</Link></li>
-            <li><Link href="#contact" className="hover:text-gray-300">Contact me</Link></li>
-          </ul>
-        </nav>
+        {isMobile ? (
+          <button onClick={toggleMenu} className="z-50">
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        ) : (
+          <nav>
+            <ul className="flex space-x-4">
+              <li><Link href="#about" className="hover:text-gray-300">About</Link></li>
+              <li><Link href="#work" className="hover:text-gray-300">Work</Link></li>
+              <li><Link href="#process" className="hover:text-gray-300">Process</Link></li>
+              <li><Link href="#contact" className="hover:text-gray-300">Contact me</Link></li>
+            </ul>
+          </nav>
+        )}
         <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-gray-700">
           {darkMode ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
           <span className="sr-only">Toggle dark mode</span>
         </button>
       </header>
+      {isMobile && isMenuOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 z-40 flex items-center justify-center">
+          <nav>
+            <ul className="flex flex-col space-y-4 text-center">
+              <li><Link href="#about" className="text-2xl hover:text-gray-300" onClick={toggleMenu}>About</Link></li>
+              <li><Link href="#work" className="text-2xl hover:text-gray-300" onClick={toggleMenu}>Work</Link></li>
+              <li><Link href="#process" className="text-2xl hover:text-gray-300" onClick={toggleMenu}>Process</Link></li>
+              <li><Link href="#contact" className="text-2xl hover:text-gray-300" onClick={toggleMenu}>Contact me</Link></li>
+            </ul>
+          </nav>
+        </div>
+      )}
       <main>
         {/* Hero Section */}
-        <section className="flex flex-col justify-center items-start h-screen p-10">
-          <h2 className="text-9xl font-bold leading-tight mb-4">
+        <section className="flex flex-col justify-center items-center h-screen p-10 text-center">
+          <h2 className="text-6xl md:text-9xl font-bold leading-tight mb-4">
             Digital<br />Designer
           </h2>
           <p className="text-xl text-gray-400 max-w-md">
@@ -90,14 +123,14 @@ export default function Component() {
           <h3 className="text-4xl font-bold mb-12 text-center">Services</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Web Design", icon: Globe, description: "Creating beautiful, user-friendly websites that capture your brand&apos;s essence." },
+              { title: "Web Design", icon: Globe, description: "Creating beautiful, user-friendly websites that capture your brand's essence." },
               { title: "Development", icon: Code, description: "Building robust, scalable web applications with cutting-edge technologies." },
               { title: "SEO", icon: Search, description: "Optimizing your online presence to increase visibility and drive organic traffic." }
             ].map((service, index) => (
               <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <service.icon className="w-12 h-12 mb-4 text-blue-400" />
-                <h4 className="text-xl font-semibold mb-2">{service.title}</h4>
-                <p className="text-gray-400">{service.description}</p>
+                <service.icon className="w-12 h-12 mb-4 text-blue-400 mx-auto" />
+                <h4 className="text-xl font-semibold mb-2 text-center">{service.title}</h4>
+                <p className="text-gray-400 text-center">{service.description}</p>
               </div>
             ))}
           </div>
@@ -106,43 +139,17 @@ export default function Component() {
         {/* Process Section */}
         <section id="process" className="py-20 px-10">
           <h3 className="text-4xl font-bold mb-12 text-center">Process</h3>
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-20 w-px bg-gray-700"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {processSteps.map((step, index) => (
-              <div
-                key={index}
-                className={`flex items-center ${index !== processSteps.length - 1 ? 'mb-20' : ''
-                  } ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}
-              >
-                <div
-                  className={`w-1/2 ${index % 2 === 0 ? 'text-right pr-8' : 'pl-8'
-                    }`}
-                >
-                  <div className="bg-gray-800 p-6 rounded-lg shadow-lg inline-block max-w-md">
-                    <step.icon
-                      className={`w-12 h-12 mb-4 text-blue-400 ${index % 2 === 0 ? 'ml-auto' : 'mr-auto'
-                        }`}
-                    />
-                    <h4 className="text-2xl font-semibold mb-2">
-                      {step.title}
-                    </h4>
-                    <p className="text-lg text-blue-400 mb-4">
-                      {step.shortDescription}
-                    </p>
-                    <p className="text-gray-400">{step.longDescription}</p>
-                  </div>
-                </div>
-                <div className="w-12 h-12 bg-blue-400 rounded-full absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
-                  <span className="text-black font-bold text-xl">
-                    {index + 1}
-                  </span>
-                </div>
-                <div className="w-1/2"></div>
+              <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <step.icon className="w-12 h-12 mb-4 text-blue-400 mx-auto" />
+                <h4 className="text-2xl font-semibold mb-2 text-center">{step.title}</h4>
+                <p className="text-lg text-blue-400 mb-4 text-center">{step.shortDescription}</p>
+                <p className="text-gray-400 text-center">{step.longDescription}</p>
               </div>
             ))}
           </div>
         </section>
-
 
         {/* Work Section */}
         <section id="work" className="py-20 px-10">
@@ -154,8 +161,8 @@ export default function Component() {
                   <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-48 object-cover" />
                 </Link>
                 <div className="p-6">
-                  <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
-                  <p className="text-gray-400">{project.description}</p>
+                  <h4 className="text-xl font-semibold mb-2 text-center">{project.title}</h4>
+                  <p className="text-gray-400 text-center">{project.description}</p>
                 </div>
               </div>
             ))}
@@ -168,7 +175,7 @@ export default function Component() {
           </div>
         </section>
 
-        {/* Moved About Section */}
+        {/* About Section */}
         <section id="about" className="py-20 px-10">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div className="w-full md:w-1/2">
@@ -181,9 +188,9 @@ export default function Component() {
               />
             </div>
             <div className="w-full md:w-1/2">
-              <h3 className="text-4xl font-bold mb-6">About Me</h3>
-              <p className="text-xl leading-relaxed text-gray-300">
-                Hi, I&apos;m Jady McIntyre. With a passion for web development and design, I focus on delivering tailored, functional, and aesthetically striking websites. With experience in creating digital solutions that help businesses grow, I&apos;m committed to providing value-driven results and building meaningful connections with my clients.
+              <h3 className="text-4xl font-bold mb-6 text-center md:text-left">About Me</h3>
+              <p className="text-xl leading-relaxed text-gray-300 text-center md:text-left">
+                Hi, I'm Jady McIntyre. With a passion for web development and design, I focus on delivering tailored, functional, and aesthetically striking websites. With experience in creating digital solutions that help businesses grow, I'm committed to providing value-driven results and building meaningful connections with my clients.
               </p>
             </div>
           </div>
@@ -194,17 +201,17 @@ export default function Component() {
           <h3 className="text-4xl font-bold mb-12 text-center">Contact Me</h3>
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
             <div className="w-full md:w-1/2">
-              <h4 className="text-2xl font-semibold mb-4">Get in Touch</h4>
+              <h4 className="text-2xl font-semibold mb-4 text-center md:text-left">Get in Touch</h4>
               <div className="space-y-4">
-                <div className="flex items-center">
+                <div className="flex items-center justify-center md:justify-start">
                   <Mail className="w-6 h-6 mr-2 text-blue-400" />
                   <a href="mailto:jadymcintyre@outlook.com" className="hover:text-blue-400">jadymcintyre@outlook.com</a>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center justify-center md:justify-start">
                   <Phone className="w-6 h-6 mr-2 text-blue-400" />
                   <a href="tel:+27796934212" className="hover:text-blue-400">+27 79 693 4212</a>
                 </div>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center justify-center md:justify-start space-x-4">
                   <a href="https://www.linkedin.com/in/jady-douglas-mcintyre-1657b0231/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
                     <Linkedin className="w-6 h-6" />
                     <span className="sr-only">LinkedIn</span>
@@ -240,7 +247,7 @@ export default function Component() {
       </main>
       <footer className="py-8 px-4 border-t border-gray-800">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
+          <div className="mb-4 md:mb-0 text-center md:text-left">
             <p>&copy; {new Date().getFullYear()} Jady McIntyre. All rights reserved.</p>
           </div>
           <nav className="mb-4 md:mb-0">
