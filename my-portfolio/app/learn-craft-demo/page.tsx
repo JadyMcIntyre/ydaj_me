@@ -1,7 +1,7 @@
 import Link from "next/link"
-import { BookOpen, CheckCircle, ChevronRight, GraduationCap, Menu, Search } from "lucide-react"
+import Image from "next/image"
+import { BookOpen, ChevronRight, GraduationCap, Menu} from "lucide-react"
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -225,13 +225,15 @@ export default function LearnCraftAcademy() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               <article className="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-200 hover:scale-105">
                 <Link className="space-y-2 p-4 flex flex-col h-full" href="#">
-                  <img
-                    alt="Blog post thumbnail"
-                    className="rounded-lg object-cover w-full aspect-video"
-                    height={180}
-                    src="/placeholder.svg"
-                    width={320}
-                  />
+                  <div className="relative w-full aspect-video">
+                    <Image
+                      alt="Blog post thumbnail"
+                      className="rounded-lg object-cover"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      src="/placeholder.svg"
+                    />
+                  </div>
                   <h3 className="text-2xl font-bold group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-200">
                     10 Tips for Effective Online Learning
                   </h3>
@@ -243,13 +245,15 @@ export default function LearnCraftAcademy() {
               </article>
               <article className="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-200 hover:scale-105">
                 <Link className="space-y-2 p-4 flex flex-col h-full" href="#">
-                  <img
-                    alt="Blog post thumbnail"
-                    className="rounded-lg object-cover w-full aspect-video"
-                    height={180}
-                    src="/placeholder.svg"
-                    width={320}
-                  />
+                  <div className="relative w-full aspect-video">
+                    <Image
+                      alt="Blog post thumbnail"
+                      className="rounded-lg object-cover"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      src="/placeholder.svg"
+                    />
+                  </div>
                   <h3 className="text-2xl font-bold group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-200">
                     The Future of Web Development
                   </h3>
@@ -261,13 +265,15 @@ export default function LearnCraftAcademy() {
               </article>
               <article className="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-200 hover:scale-105">
                 <Link className="space-y-2 p-4 flex flex-col h-full" href="#">
-                  <img
-                    alt="Blog post thumbnail"
-                    className="rounded-lg object-cover w-full aspect-video"
-                    height={180}
-                    src="/placeholder.svg"
-                    width={320}
-                  />
+                  <div className="relative w-full aspect-video">
+                    <Image
+                      alt="Blog post thumbnail"
+                      className="rounded-lg object-cover"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      src="/placeholder.svg"
+                    />
+                  </div>
                   <h3 className="text-2xl font-bold group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-200">
                     Demystifying Machine Learning
                   </h3>

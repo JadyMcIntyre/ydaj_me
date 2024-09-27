@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Menu, X, ChevronRight, Camera, BookOpen, MessageSquare, Calendar } from "lucide-react"
+import { Menu, ChevronRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"

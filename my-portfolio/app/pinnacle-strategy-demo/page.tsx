@@ -1,7 +1,6 @@
 import Link from 'next/link'
-import { Button } from "@/components/ui/button"
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function PinnacleStrategy() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-white shadow-sm">
@@ -20,7 +19,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </header>
       <main className="flex-grow">
-        {children}
       </main>
       <footer className="bg-gray-800 text-white">
         <div className="container mx-auto px-4 py-8">
