@@ -3,17 +3,17 @@ import { Button } from "@/components/ui/button"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-white text-gray-900">
       <header className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-primary">
             Pinnacle Strategy Group
           </Link>
           <nav className="hidden md:flex space-x-4">
-            <Link href="/" className="text-primary hover:text-primary/80">Home</Link>
-            <Link href="/services" className="text-primary hover:text-primary/80">Services</Link>
-            <Link href="/blog" className="text-primary hover:text-primary/80">Blog</Link>
-            <Link href="/contact" className="text-primary hover:text-primary/80">Contact</Link>
+            <Link href="/pinnacle-strategy" className="text-primary hover:text-primary/80">Home</Link>
+            <Link href="/pinnacle-strategy-services" className="text-primary hover:text-primary/80">Services</Link>
+            <Link href="/pinnacle-strategy-blog" className="text-primary hover:text-primary/80">Blog</Link>
+            <Link href="/pinnacle-strategy-contact" className="text-primary hover:text-primary/80">Contact</Link>
           </nav>
           <Button className="hidden md:inline-flex">Get Started</Button>
           <Button variant="ghost" className="md:hidden">
@@ -23,7 +23,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Button>
         </div>
       </header>
-      <main className="flex-grow">
+      <main className="flex-grow bg-white">
         {children}
       </main>
       <footer className="bg-gray-100">

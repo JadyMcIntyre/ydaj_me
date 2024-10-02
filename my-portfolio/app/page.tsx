@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { Moon, Sun, Globe, Code, Search, PhoneCall, Palette, Laptop, Send, ArrowRight, Mail, Phone, Linkedin, Github, Twitter, Menu, X } from 'lucide-react'
 
 export default function Component() {
-  const [darkMode, setDarkMode] = useState(true)
+  // const [darkMode, setDarkMode] = useState(true)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
@@ -19,9 +19,9 @@ export default function Component() {
     return () => window.removeEventListener('resize', checkIsMobile)
   }, [])
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-  }
+  // const toggleDarkMode = () => {
+  //   setDarkMode(!darkMode)
+  // }
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -73,7 +73,8 @@ export default function Component() {
   ]
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+    // <div className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+      <div className={`min-h-screen 'bg-white text-black'}`}>
       <header className="p-5 flex justify-between items-center">
         <h1 className="text-xl font-semibold">Jady McIntyre</h1>
         {isMobile ? (
@@ -90,10 +91,10 @@ export default function Component() {
             </ul>
           </nav>
         )}
-        <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-gray-700">
+        {/* <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-gray-700">
           {darkMode ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
           <span className="sr-only">Toggle dark mode</span>
-        </button>
+        </button> */}
       </header>
       {isMobile && isMenuOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-90 z-40 flex items-center justify-center">
