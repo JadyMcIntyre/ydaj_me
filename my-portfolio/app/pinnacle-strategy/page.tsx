@@ -1,54 +1,79 @@
+import Image from 'next/image'
 import Link from 'next/link'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-export default function PinnacleStrategy() {
+export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <header className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-gray-800">
-            Pinnacle Strategy Group
-          </Link>
-          <nav>
-            <ul className="flex space-x-4">
-              <li><Link href="/" className="text-gray-600 hover:text-gray-800">Home</Link></li>
-              <li><Link href="/services" className="text-gray-600 hover:text-gray-800">Services</Link></li>
-              <li><Link href="/blog" className="text-gray-600 hover:text-gray-800">Blog</Link></li>
-              <li><Link href="/contact" className="text-gray-600 hover:text-gray-800">Contact</Link></li>
-            </ul>
-          </nav>
+    <div>
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-primary to-primary-foreground text-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Elevate Your Business with Strategic Insights</h1>
+            <p className="text-xl mb-8">Pinnacle Strategy Group helps businesses navigate complex challenges and achieve sustainable growth.</p>
+            <Button size="lg" asChild>
+              <Link href="/contact">Get a Free Consultation</Link>
+            </Button>
+          </div>
         </div>
-      </header>
-      <main className="flex-grow">
-      </main>
-      <footer className="bg-gray-800 text-white">
-        <div className="container mx-auto px-4 py-8">
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Pinnacle Strategy Group</h3>
-              <p>Empowering businesses with innovative solutions.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li><Link href="/about" className="hover:underline">About Us</Link></li>
-                <li><Link href="/services" className="hover:underline">Our Services</Link></li>
-                <li><Link href="/blog" className="hover:underline">Blog</Link></li>
-                <li><Link href="/contact" className="hover:underline">Contact Us</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contact</h3>
-              <p>123 Business Avenue, Suite 500</p>
-              <p>New York, NY 10001</p>
-              <p>Phone: (555) 123-4567</p>
-              <p>Email: info@pinnaclesg.com</p>
-            </div>
+            {['Strategic Planning', 'Market Analysis', 'Operational Efficiency'].map((service) => (
+              <Card key={service}>
+                <CardHeader>
+                  <CardTitle>{service}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription>Leverage our expertise in {service.toLowerCase()} to drive your business forward.</CardDescription>
+                </CardContent>
+              </Card>
+            ))}
           </div>
-          <div className="mt-8 pt-8 border-t border-gray-700 text-center">
-            <p>&copy; 2024 Pinnacle Strategy Group. All rights reserved.</p>
+          <div className="text-center mt-12">
+            <Button asChild>
+              <Link href="/services">View All Services</Link>
+            </Button>
           </div>
         </div>
-      </footer>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="bg-gray-100 py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { name: 'John Doe', title: 'CEO, Tech Innovators', quote: 'Pinnacle Strategy Group transformed our business with their insightful strategies.' },
+              { name: 'Jane Smith', title: 'CFO, Global Enterprises', quote: 'Their market analysis was crucial in our successful expansion to new markets.' }
+            ].map((testimonial, index) => (
+              <Card key={index}>
+                <CardContent className="pt-6">
+                  <p className="italic mb-4">"{testimonial.quote}"</p>
+                  <p className="font-semibold">{testimonial.name}</p>
+                  <p className="text-sm text-gray-500">{testimonial.title}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6">Ready to Take Your Business to New Heights?</h2>
+          <p className="text-xl mb-8">Let's collaborate to create tailored strategies that drive growth and success.</p>
+          <Button size="lg" asChild>
+            <Link href="/contact">Schedule a Consultation</Link>
+          </Button>
+        </div>
+      </section>
     </div>
   )
 }
