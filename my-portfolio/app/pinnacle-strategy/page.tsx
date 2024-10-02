@@ -13,7 +13,7 @@ export default function Home() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Elevate Your Business with Strategic Insights</h1>
             <p className="text-xl mb-8">Pinnacle Strategy Group helps businesses navigate complex challenges and achieve sustainable growth.</p>
             <Button size="lg" asChild>
-              <Link href="/contact">Get a Free Consultation</Link>
+              <Link href="/pinnacle-strategy-contact">Get a Free Consultation</Link>
             </Button>
           </div>
         </div>
@@ -37,7 +37,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-12">
             <Button asChild>
-              <Link href="/services">View All Services</Link>
+              <Link href="/pinnacle-strategy-services">View All Services</Link>
             </Button>
           </div>
         </div>
@@ -46,7 +46,7 @@ export default function Home() {
       {/* Testimonials Section */}
       <section className="bg-gray-100 py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">What Our Clients Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { name: 'John Doe', title: 'CEO, Tech Innovators', quote: 'Pinnacle Strategy Group transformed our business with their insightful strategies.' },
@@ -54,9 +54,9 @@ export default function Home() {
             ].map((testimonial, index) => (
               <Card key={index}>
                 <CardContent className="pt-6">
-                  <p className="italic mb-4">"{testimonial.quote}"</p>
-                  <p className="font-semibold">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.title}</p>
+                  <p className="italic mb-4 text-gray-700">"{testimonial.quote}"</p>
+                  <p className="font-semibold text-gray-800">{testimonial.name}</p>
+                  <p className="text-sm text-gray-600">{testimonial.title}</p>
                 </CardContent>
               </Card>
             ))}
