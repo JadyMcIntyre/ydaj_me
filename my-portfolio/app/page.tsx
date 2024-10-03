@@ -77,7 +77,9 @@ export default function Component() {
     // <div className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
       <div className={`min-h-screen 'bg-white text-black'}`}>
       <header className="p-5 flex justify-between items-center">
-        <h1 className="text-xl font-semibold">Jady McIntyre</h1>
+        <h1 className="text-xl font-semibold">
+          <Link href="/" className="hover:text-gray-300">Jady McIntyre</Link>
+        </h1>
         {isMobile ? (
           <button onClick={toggleMenu} className="z-50">
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -86,7 +88,7 @@ export default function Component() {
           <nav>
             <ul className="flex space-x-4">
               <li><Link href="#about" className="hover:text-gray-300">About</Link></li>
-              <li><Link href="#work" className="hover:text-gray-300">Work</Link></li>
+              <li><Link href="/previous-work" className="hover:text-gray-300">Work</Link></li>
               <li><Link href="#process" className="hover:text-gray-300">Process</Link></li>
               <li><Link href="#contact" className="hover:text-gray-300">Contact me</Link></li>
             </ul>
@@ -102,7 +104,7 @@ export default function Component() {
           <nav>
             <ul className="flex flex-col space-y-4 text-center">
               <li><Link href="#about" className="text-2xl hover:text-gray-300" onClick={toggleMenu}>About</Link></li>
-              <li><Link href="#work" className="text-2xl hover:text-gray-300" onClick={toggleMenu}>Work</Link></li>
+              <li><Link href="/previous-work" className="text-2xl hover:text-gray-300" onClick={toggleMenu}>Work</Link></li>
               <li><Link href="#process" className="text-2xl hover:text-gray-300" onClick={toggleMenu}>Process</Link></li>
               <li><Link href="#contact" className="text-2xl hover:text-gray-300" onClick={toggleMenu}>Contact me</Link></li>
             </ul>
@@ -182,10 +184,10 @@ export default function Component() {
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div className="w-full md:w-1/2">
               <Image
-                src="/images/headshot.jpeg"
-                alt="Professional headshot"
-                width={600}
-                height={600}
+                src="/images/jady.jpg"
+                alt="Jady McIntyre"
+                width={1024}
+                height={949}
                 className="rounded-lg shadow-lg w-full h-auto object-cover"
               />
             </div>
@@ -256,7 +258,7 @@ export default function Component() {
             <ul className="flex space-x-4">
               <li><Link href="#" className="hover:text-blue-400">Home</Link></li>
               <li><Link href="#about" className="hover:text-blue-400">About</Link></li>
-              <li><Link href="#work" className="hover:text-blue-400">Work</Link></li>
+              <li><Link href="/previous-work" className="hover:text-blue-400">Work</Link></li>
               <li><Link href="#contact" className="hover:text-blue-400">Contact</Link></li>
             </ul>
           </nav>

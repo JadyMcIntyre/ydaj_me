@@ -43,7 +43,9 @@ export default function PreviousWork() {
   return (
     <div className="min-h-screen bg-black text-white">
       <header className="p-5 flex justify-between items-center">
-        <h1 className="text-xl font-semibold">Jady McIntyre</h1>
+        <h1 className="text-xl font-semibold">
+          <Link href="/" className="hover:text-gray-300">Jady McIntyre</Link>
+        </h1>
         {isMobile ? (
           <button onClick={toggleMenu} className="z-50">
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
