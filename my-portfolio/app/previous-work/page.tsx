@@ -73,7 +73,10 @@ export default function PreviousWork() {
       )}
       <main>
         <section className="py-20 px-10">
-          <h2 className="text-4xl font-bold mb-12 text-center">Previous Work</h2>
+          <h2 className="text-4xl font-bold mb-6 text-center">Previous Work</h2>
+          <p className="text-gray-400 text-center mb-12 max-w-3xl mx-auto">
+            Please note that not all clients that I've worked with are comfortable with placing their site here. For demonstration purposes, these are some very basic websites for you to look through. Please note that since this is a demo site, functionality will be limited.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div key={index} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
@@ -87,6 +90,7 @@ export default function PreviousWork() {
               </div>
             ))}
           </div>
+          <p className="text-gray-400 text-center mt-12 text-xl italic">...more to come soon</p>
         </section>
       </main>
     </div>
