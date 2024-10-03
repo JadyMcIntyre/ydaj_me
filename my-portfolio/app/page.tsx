@@ -67,8 +67,8 @@ export default function Component() {
     },
     {
       title: "Pinnacle Strategy",
-      description: "Designed for engagement, this project delivers both aesthetic appeal and technical performance.",
-      image: "/images/placeholder.png"
+      description: "This project showcases a clean, professional business consulting site for Pinnacle Strategy Group. The site highlights their strategic planning services, client testimonials, and a call-to-action for consultations, providing visitors with an engaging and informative browsing experience.",
+      image: "/images/pinnacle-strategy.png"
     }
   ]
 
