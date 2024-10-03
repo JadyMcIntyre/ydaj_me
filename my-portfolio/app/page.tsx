@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 // import {Moon, Sun,} from 'lucide-react'
-import {  Globe, Code, Search, PhoneCall, Palette, Laptop, Send, ArrowRight, Mail, Phone, Linkedin, Github, Twitter, Menu, X } from 'lucide-react'
+import {  Globe, Code, Search, PhoneCall, Palette, Laptop, Send, ArrowRight, Mail, Phone, Linkedin, Github, Menu, X } from 'lucide-react'
 
 export default function Component() {
   // const [darkMode, setDarkMode] = useState(true)
