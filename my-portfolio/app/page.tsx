@@ -170,7 +170,7 @@ export default function Component() {
             ))}
           </div>
           <div className="mt-12 text-center">
-            <Link href="/work" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200">
+            <Link href="/previous-work" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200">
               See More
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
@@ -268,10 +268,6 @@ export default function Component() {
             <a href="https://github.com/JadyMcIntyre" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
               <Github className="w-5 h-5" />
               <span className="sr-only">GitHub</span>
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-              <Twitter className="w-5 h-5" />
-              <span className="sr-only">Twitter</span>
             </a>
           </div>
         </div>
