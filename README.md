@@ -1,3 +1,5 @@
-# To Do
-- [ ] Add image and description for pinnacle demo site
-- [ ] Fix Page routing and layout for pinnacle
+# Portfolio Website
+
+This is a portfolio website for freelance web design/developing.
+
+Built with react using Tailwind CSS/Lucide/Shadcn
